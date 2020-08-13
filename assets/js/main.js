@@ -1,7 +1,3 @@
-// $('.nav-link').click(function() {
-//     $('.navbar-toggler').click()
-// })
-
 var offSet = 0;
 var limit = 10;
 
