@@ -1,0 +1,130 @@
+ul.filter-list > li {
+    list-style-type: none;
+    padding-top: 5px;
+    margin: 0px 0px 0px -20px;
+}
+
+ul.filter-list > li label{
+
+    margin-bottom: 0px !important;
+}
+
+.hr-cus {
+    margin: 8px 0px;
+    border: 0;
+    border-top: 1px solid #cac3c3
+}
+
+.header-bg {
+    background-color: #7b4ab1;
+}
+
+.nav-item > a {
+    color: white !important;
+}
+.img-tv {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+#telivisonCheck {
+    /* margin-left: 15%; */
+}
+
+.product-des {
+    /* list-style-type: none; */
+    margin: 20px ;
+    padding: 0;
+}
+
+.price-section {
+    list-style-type: none;
+    margin: 0px ;
+    padding: 0;
+}
+
+#product-name {
+    color: #632e9e;
+    font-weight: bolder;
+}
+
+#heart-cus {
+     /* margin: 0px 0px; */
+     color: #e6e4e4;
+     font-size: 19px;
+}
+
+#heart-cus:hover{
+    color:green !important;
+ }
+
+ .card {
+     border: none !important;
+     border-radius: none !important;
+ }
+
+ #filterButton {
+     /* display: none; */
+     color: white;
+     /* margin: auto; */
+     background-color: #7b4ab1;
+     border-color: #7b4ab1 !important;
+     margin-bottom: 5px;
+ }
+
+ #sortButton {
+    color: white;
+    background-color: #7b4ab1;
+    border-color: #7b4ab1 !important;
+    margin-bottom: 5px;
+ }
+
+ .footer-bg {
+     color:white;
+     background-color:#a57cd2 ;
+     text-align: center;
+    
+ }
+
+ .priceSearchBtn {
+     background-color:#985fd6 ;
+     color: white;
+     text-align: center;
+ }
+
+ /* .logo-cus {
+     font-size: 25px;
+ } */
+
+ .cart-cus > a {
+     color: white;
+     
+     /* font-size:; */
+ }
+ .cart-cus > a:hover {
+    color: white;
+    font-size: 18px;
+    font-weight:bold;
+    
+    /* font-size:; */
+}
+
+ .cart-cus {
+    padding-top: 5px !important;
+ }
+
+ .sgnInBtn .btn {
+    padding: none !important;
+ }
+
+ .body-bg {
+
+    background-color: grey;
+ }
+
+ .product-img:hover{
+    border:1px solid #ececec;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
