@@ -64,8 +64,8 @@ function productDetails() {
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-4 my-2">
-                                                <h3 id="">
-                                                    &#8377; ${datalimit[i].offerPrice}</h3>
+                                                <h4 id="">
+                                                    &#8377; ${datalimit[i].offerPrice}</h4>
                                                 <ul class="price-section">
                                                     <li class=""><s>&#8377; ${datalimit[i].price}</s></li>
                                                     <li class="">Upto 8000 offer</li>
@@ -144,7 +144,7 @@ function nextPage() {
 
     offSet += 10;
     limit += 10;
-    console.log("test")
+    console.log("")
     productDetails();
 
     $("#dataLimit").text(limit);
