@@ -11,8 +11,16 @@ function productDetails() {
         method : 'GET',
         dataType: "json",
         success: function (response) {
-
-           
+            
+            function replacer(key, value) {
+                return value.replace(/\\"/g, '"');
+            }
+              
+            console.log()
+            let r = response[0]['Enities_key_value'].replace(/\\'/g, "")
+            console.log(r[1])
+            // let t = response[0]['Enities_key_value'].replace(/[^\w\s]/gi, '');
+            // console.log(t)
 
             // console.log(response);
             $("#dataLimit").text(limit);
@@ -22,6 +30,8 @@ function productDetails() {
             datalimit = processData(datalimit);
             console.log(datalimit);
             var datalength = datalimit.length;
+
+            // iteration of data
             for(var i=0; i<datalength; i++) {
                 console.log(response[i].Image_url);
 
@@ -62,7 +72,7 @@ function productDetails() {
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-4 my-2">
                                                 <h3 id="">
-                                                    </h>&#8377; ${datalimit[i].offerPrice}</h3>
+                                                    &#8377; ${datalimit[i].offerPrice}</h3>
                                                 <ul class="price-section">
                                                     <li class=""><s>&#8377; ${datalimit[i].price}</s></li>
                                                     <li class="">Upto 8000 offer</li>
@@ -71,7 +81,7 @@ function productDetails() {
                                          </div>
                 `
 
-                $("#product-des-sec").append(appendData);
+                $("#product-des-sec").append(appendData); // append data into front end
             }
 
         },
@@ -80,27 +90,27 @@ function productDetails() {
         }
     }); 
 }
-productDetails();
+productDetails();  // function call
 
 
+// function for generate random data
 function processData(datalimit) {
-
 
    datalimit.map((television, index)=>{
     
-        television.price = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;
+        television.price = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;  // Basic price
 
-        television.ratingCount = Math.floor(Math.random() * (50000 - 2000 + 1)) + 5000;
+        television.ratingCount = Math.floor(Math.random() * (50000 - 2000 + 1)) + 5000;  // rating count cal
+  
+        television.reviews = Math.floor(Math.random() * (30000 - 1000 + 1)) + 1000;         // reviews
 
-        television.reviews = Math.floor(Math.random() * (30000 - 1000 + 1)) + 1000;
+        television.rating = (Math.random() * (4 - 0 + 1)).toFixed(1);                   // rating 
 
-        television.rating = (Math.random() * (4 - 0 + 1)).toFixed(1);
+        television.percentage =Math.floor(Math.random() * (10 - 4 + 1)).toFixed(1);     // percentage of oofer cal
 
-        television.percentage =Math.floor(Math.random() * (10 - 4 + 1)).toFixed(1);
-
-        television.offerPrice = (television.price - ((television.price / 100) * (television.percentage))).toFixed(0);
+        television.offerPrice = (television.price - ((television.price / 100) * (television.percentage))).toFixed(0); // offer price
  
-        // console.log(index)
+        // console.log(index);
     });
 
     console.log(datalimit);
@@ -109,11 +119,10 @@ function processData(datalimit) {
 }
 
 
-
-
+// function for filter section
 function displayFilter(e) {
 
-    console.log("tetss");
+    console.log("test");
 
    if($(".filter-section").hasClass("d-none")) {
         $(".filter-section").removeClass("d-none");
@@ -126,7 +135,7 @@ function displayFilter(e) {
     console.log($(".filter-section"));
 }
 
-
+// function for pagenation 
 function nextPage() {
     console.log("test");
 

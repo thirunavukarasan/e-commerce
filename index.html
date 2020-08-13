@@ -21,30 +21,30 @@
     <!--Header-->
     <header>
         <nav class="header-bg p-3">
-                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button> -->
-                <div class="row" id="">
-                    <div class="col-lg-3 col-md-3 d-none d-sm-block text-left ">
-                        <!-- <img src="assets/img/logo.png" class="logo-cus" alt="Logo" > -->
-                        <a class="navbar-brand text-white logo-cus" href="#"><b>My Shop</b></a>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="input-group">
-                            <input type="search" placeholder="Search Product & Brand..." aria-describedby="button-addon6"
-                                class="form-control ">
-                            <div class="input-group-append">
-                                <button id="button-addon6" type="submit" class="btn btn-dark"><i class="fa fa-search"> </i>
-                                    Search</button>
-                            </div>
+            <div class="row" id="">
+                <div class="col-lg-3 col-md-3 d-none d-sm-block text-left ">
+                    <!-- <img src="assets/img/logo-1.png" class="" alt="Logo" > -->
+                    <a class="navbar-brand text-white logo-cus" href="#"><b>POU-Design</b></a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="input-group">
+                        <input type="search" placeholder="Search Product & Brand..." aria-describedby="button-addon6"
+                            class="form-control ">
+                        <div class="input-group-append">
+                            <button id="button-addon6" type="submit" class="btn btn-dark"><i class="fa fa-search"> </i>
+                                Search</button>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-12  text-right cart-cus">
-                        <a class="navbar-brand fa fa-shopping-cart " href="#"></a>
-                        <a class="navbar-brand  fa fa-user " href="#"> Login</a>
-                    </div>
                 </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12  text-right cart-cus">
+                    <a class="navbar-brand fa fa-shopping-cart " href="#"></a>
+                    <a class="navbar-brand  fa fa-user " href="#"> Login</a>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -52,19 +52,20 @@
     <main>
         <div class="container-fluid bg-light">
             <div class="card mt-2 ">
-                <div class="row">   
+                <div class="row">
                     <div class="col-6 d-none d-block d-sm-none d-md-none text-center">
                         <button class="btn btn-primary btn-sm fa fa-filter" id="sortButton"> Sort</button>
                     </div>
                     <div class="col-6 d-none d-block d-sm-none d-md-none text-center">
-                        <button class="btn btn-primary btn-sm fa fa-filter" id="filterButton" onclick="displayFilter(event)"> Filter</button>
+                        <button class="btn btn-primary btn-sm fa fa-filter" id="filterButton"
+                            onclick="displayFilter(event)"> Filter</button>
                     </div>
                 </div>
             </div>
- 
+
 
             <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12  d-none d-sm-block bg-light filter-section">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12  d-none d-sm-block bg-light filter-section">
                     <div class="card mt-2">
                         <div class="row">
                             <div class="col-12">
@@ -121,15 +122,14 @@
                                                 <form>
                                                     <div class="row mb-4 priceRange">
                                                         <div class="col-lg-4 col-md-5 col-sm-5 col-4 mx-2">
-                                                            <input type="text" class="form-control"
-                                                                placeholder="₹ Min">
+                                                            <input type="text" class="form-control" placeholder="₹ Min">
                                                         </div>
                                                         <div class="col-lg-4 col-md-5  col-sm-5 col-4 mx-2 mb-2">
-                                                            <input type="text" class="form-control"
-                                                                placeholder="₹ Max">
+                                                            <input type="text" class="form-control" placeholder="₹ Max">
                                                         </div>
-                                                        <div class="col-lg-2 col-md-12 col-sm-2 col-2 mx-2 ">
-                                                            <button type="button" class="btn btn-sm priceSearchBtn">Go</button>
+                                                        <div class="col-lg-2 col-md-12 col-sm-2 col-2 mx-2 pt-1">
+                                                            <button type="button"
+                                                                class="btn btn-sm priceSearchBtn">Go</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -228,30 +228,28 @@
                     </div>
                 </div>
 
-                
-                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 bg-light">
+
+                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12 bg-light">
                     <div class="row card mt-2 mx-md-1">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12  ">
                             <div class="row">
                                 <div class="col-12">
-                                    <h5 class="p-3">Showing the result 1-<span id="dataLimit"></span> of <span id="dataTotLength"></span></h5>
+                                    <h5 class="p-3">Showing the result 1-<span id="dataLimit"></span> of <span
+                                            id="dataTotLength"></span></h5>
                                     <hr class="hr-cus">
                                 </div>
                             </div>
                             <div id="product-des-sec">
 
                             </div>
-
-
-
-            
-
-
                         </div>
                     </div>
+
+                     <!--page Load-->
                     <div class="row my-2">
                         <div class="col-12 text-center">
-                            <button class="btn btn-info btn-sm" id="nextPageButton" onclick="nextPage(event)"> Load More Items..</button>
+                            <button class="btn btn-info btn-sm" id="nextPageButton" onclick="nextPage(event)"> Load More
+                                Items..</button>
                         </div>
                     </div>
                 </div>
@@ -259,11 +257,13 @@
         </div>
 
     </main>
+
+    <!--footer-->
     <footer class="bg-light">
         <div class="container-fluid footer-bg">
             <div class="row ">
                 <div class="col-12 py-2">
-                    <p>Copyright © 2020, Shopping Private Limited. All Rights Reserve</p>
+                    <p>Copyright © 2020, POU-Design Private Limited. All Rights Reserve</p>
                 </div>
             </div>
         </div>
