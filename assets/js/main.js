@@ -12,28 +12,25 @@ function productDetails() {
         dataType: "json",
         success: function (response) {
             
-            function replacer(key, value) {
-                return value.replace(/\\"/g, '"');
-            }
-              
-            console.log()
-            let r = response[0]['Enities_key_value'].replace(/\\'/g, "")
-            console.log(r[1])
-            // let t = response[0]['Enities_key_value'].replace(/[^\w\s]/gi, '');
-            // console.log(t)
-
-            // console.log(response);
             $("#dataLimit").text(limit);
             $("#dataTotLength").text(response.length);
-            console.log(offSet,limit)
-            var datalimit = response.slice(offSet,limit)
+            console.log(offSet,limit);
+            let datalimit = response.slice(offSet,limit);
             datalimit = processData(datalimit);
             console.log(datalimit);
-            var datalength = datalimit.length;
+            let datalength = datalimit.length;
 
             // iteration of data
             for(var i=0; i<datalength; i++) {
-                console.log(response[i].Image_url);
+                console.log(datalimit[i].Image_url);
+
+                let productSpec = ''
+                for(var j=0; j<5; j++) {
+
+                    productSpec += ` <li class=""> ${datalimit[i].Enities_key_value[j]}</li>`
+                  
+                    console.log(datalimit[i].Enities_key_value[j]);
+                }
 
                 let appendData = `
                                         <div class="row mt-2 border-bottom product-img">
@@ -62,11 +59,7 @@ function productDetails() {
                                                     <button type="button" class="btn btn-success btn-sm ">${datalimit[i].rating} <i class="fa fa-star"
                                                             aria-hidden="true"></i></button><span class="text-muted">  Rating :${datalimit[i].ratingCount}</span>  <span class="text-muted">Reviews: ${datalimit[i].reviews}</span>
                                                     <ul class="product-des d-none d-sm-block">
-                                                        <li class="">Netflix|Prime Video|Disney+Hotstar|Yout</li>
-                                                        <li class="">Operating System: Android</li>
-                                                        <li class="">Ultra HD (4K) 3840 x 2160 Pixels</li>
-                                                        <li class="">20 W Speaker Output</li>
-                                                        <li class="">60 Hz Refresh Rate</li>
+                                                        ${productSpec}
                                                     </ul>
                                                 </div>
                                             </div>
@@ -97,7 +90,17 @@ productDetails();  // function call
 function processData(datalimit) {
 
    datalimit.map((television, index)=>{
-    
+
+
+        var convertData =  television.Enities_key_value;
+        convertData = convertData.split(',').map((entity)=> {
+            // console.log(entity);
+           return entity.replace(/[^\w\s]/gi, '').trim('');
+        });
+        // console.log(convertData);
+
+        television.Enities_key_value = convertData;
+
         television.price = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;  // Basic price
 
         television.ratingCount = Math.floor(Math.random() * (50000 - 2000 + 1)) + 5000;  // rating count cal
@@ -113,7 +116,7 @@ function processData(datalimit) {
         // console.log(index);
     });
 
-    console.log(datalimit);
+    // console.log(datalimit);
     return datalimit;
 
 }
@@ -141,10 +144,9 @@ function nextPage() {
 
     offSet += 10;
     limit += 10;
-    console.log("**************************8")
+    console.log("test")
     productDetails();
 
     $("#dataLimit").text(limit);
-
 
 }
